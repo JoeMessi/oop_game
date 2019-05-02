@@ -20,15 +20,15 @@
      this.winner = null;
    }
 
-   startGame(phrase) {
+   startGame() {
      // hides the start screen overlay
      document.getElementById('overlay').style.display = 'none';
 
      // sets the activePhrase property with the chosen phrase
-     this.activePhrase = phrase;
+     this.activePhrase = new Phrase(this.getRandomPhrase());
 
      //  adds that phrase to the board by calling the addPhraseToDisplay() method on the active Phrase object.
-     phrase.addPhraseToDisplay();
+     this.activePhrase.addPhraseToDisplay();
 
 
 
@@ -55,7 +55,7 @@
     if(mapped.includes(key.textContent)) {
         key.classList.add('chosen');
         // :::::::::::::::::::::::::::::::::::::::::::::
-        phrase.checkLetter(key.textContent);
+        this.activePhrase.checkLetter(key.textContent);
          this.checkForWin();
         // If the player has won the game, also call the gameOver() method.
     }else{
@@ -70,13 +70,15 @@
      // removes a life from the scoreboard
 
      // selects the scoreboard hearts - html collection
-     const images = document.querySelectorAll("[src='images/liveHeart.png']");
+     let images = document.querySelectorAll("[src='images/liveHeart.png']");
 
      // remove last heart
      images[images.length -1].setAttribute('src', 'images/lostHeart.png');
 
      // increments the missed property
+     // console.log(`missed is at: ${this.missed}`);
      this.missed += 1;
+     console.log(this.missed);
 
      // If the player has five missed guesses
      // end the game by calling the gameOver() method.
@@ -126,6 +128,8 @@
        h1.textContent = 'you lose';
        overlay.classList.add('lose');
      }
+
+     this.missed = 0;
 
    }
 
