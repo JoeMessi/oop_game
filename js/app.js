@@ -58,7 +58,6 @@ document.getElementById('qwerty').addEventListener('click', function(e) {
 });
 
 
-
 // we give users the chance to use their real keyboard
 // by adding a 'keydown' event listener on the document
 document.addEventListener('keydown', (event) => {

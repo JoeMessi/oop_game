@@ -90,7 +90,6 @@
      // If the player gets to five wrong guesses
      // we end the game by calling the gameOver method.
      if(this.missed === 5) {
-       this.winner = false;
        this.gameOver(false);
      }
    }
@@ -116,7 +115,6 @@
      // if the 'track' array is empty it means that we don't have any hidden letters
      // in our phrase anymore which means the player has guessed them all and has won.
      if(track.length === 0) {
-        this.winner = true;
         this.gameOver(true);
 
      }
