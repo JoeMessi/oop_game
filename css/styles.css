@@ -49,7 +49,7 @@ h1 {
 button {
   margin: 6px;
   border: 1px solid transparent;
-  padding: .5rem 1rem;
+  padding: .7rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
@@ -94,10 +94,10 @@ button {
 
 .letter {
   font-size: var(--font-size-medium);
-  height: 65px;
-  width: 65px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
+  height: 68px;
+  width: 68px;
+  padding: 23px 1px 0 1px;
+  margin-right: 3px;
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
@@ -112,9 +112,9 @@ button {
 .show {
   color: #fff;
   background-color: #4ac0d5;
-  font-size: 20px;
-  height: 65px;
-  width: 65px;
+  font-size: 23px;
+  height: 68px;
+  width: 68px;
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
@@ -131,14 +131,14 @@ button {
 }
 
 .chosen {
-  background: #3a3f58;
+  background: #4caf50e0;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: #403939e0;
   color: #FFFFFF;
 }
 
@@ -196,7 +196,7 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #ce5a5a;
 }
 
 .lose a {
