@@ -14,6 +14,9 @@ const hearts = scoreboard.getElementsByTagName('img');
 // selects the ul of the phrase letters lis
 const ul = document.getElementById('phrase').firstElementChild;
 
+// array of keys that have been pressed already
+let pressedKeys = [];
+
 
 // we add a 'click' event listener on the 'start game' button
 // when the button is clicked we reset some elements
@@ -36,6 +39,9 @@ document.getElementById('btn__reset').addEventListener('click', () => {
     hearts[i].removeAttribute('src');
     hearts[i].setAttribute('src', 'images/liveHeart.png');
   }
+
+  // we empy the array of keys that have been pressed already
+  pressedKeys = [];
 
 
   // we initialize the 'Game' class instace
@@ -64,11 +70,22 @@ document.addEventListener('keydown', (event) => {
   // selects the key just pressed
   const keyPressed = event.key.toLowerCase();
 
-    // we call handleInteraction() on the onscreen button
-    // whose textContent matched the key just pressed
-    for(let button of keys) {
-      if(button.textContent === keyPressed) {
-        game.handleInteraction(button);
-      }
-    }
+   // if the key pressed is included in the array of key already pressed
+   // we don't react on it
+   if(pressedKeys.includes(keyPressed)) {
+     return false;
+   }else{
+
+     // we call handleInteraction() on the onscreen button
+     // whose textContent matched the key just pressed
+     for(let button of keys) {
+       if(button.textContent === keyPressed) {
+         game.handleInteraction(button);
+
+         // and we push that key to the array of keyPressed   
+         pressedKeys.push(keyPressed);
+       }
+     }
+   }
+
 });
