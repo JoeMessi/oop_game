@@ -7,11 +7,11 @@
 
      // array of phrases
      this.phrases = [
-       'Hello',
-       'Dogs are nice',
-       'cats are small',
-       'Hello cats',
-       'Hello dogs'
+       'My dog is a beagle',
+       'A fish out of water',
+       'cats are evil',
+       'All things come to those who wait',
+       'salt of the earth'
      ];
 
      // this property will hold the active phrase
