@@ -75,16 +75,22 @@ document.addEventListener('keydown', (event) => {
    if(pressedKeys.includes(keyPressed)) {
      return false;
    }else{
-
      // we call handleInteraction() on the onscreen button
-     // whose textContent matched the key just pressed
+     // whose textContent matched the key just pressed and it's not disabled
      for(let button of keys) {
-       if(button.textContent === keyPressed) {
+       // if the button that matches the key just pressed is disabled
+       // we don't react on it because this means that it has already been clicked on the onscreen keyborad.
+       if(button.textContent === keyPressed && button.disabled) {
+         return false;
+       }
+       else if(button.textContent === keyPressed) {
          game.handleInteraction(button);
 
-         // and we push that key to the array of keyPressed   
+         // and we push that key to the array of keyPressed
          pressedKeys.push(keyPressed);
        }
+
+
      }
    }
 

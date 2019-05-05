@@ -36,7 +36,7 @@
 
    // randomly retrieves one of the phrases stored in the phrases array and returns it.
    getRandomPhrase() {
-     const random = Math.floor(Math.random() * 5 );
+     const random = Math.floor(Math.random() * this.phrases.length );
      return this.phrases[random];
    }
 
